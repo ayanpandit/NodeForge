@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: enterprise_api_prod
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - CORS_ORIGIN=*
+      - BODY_LIMIT=10kb
+    restart: always
+    security_opt:
+      - no-new-privileges:true

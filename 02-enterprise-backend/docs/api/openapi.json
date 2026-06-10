@@ -1,0 +1,30 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Enterprise NodeForge API",
+    "description": "Production-ready API specification foundation",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/health/live": {
+      "get": {
+        "summary": "Check process liveness status",
+        "responses": {
+          "200": {
+            "description": "Liveness verification successful"
+          }
+        }
+      }
+    },
+    "/health/ready": {
+      "get": {
+        "summary": "Check system readiness",
+        "responses": {
+          "200": {
+            "description": "Server ready to accept requests"
+          }
+        }
+      }
+    }
+  }
+}

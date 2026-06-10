@@ -1,4 +1,6 @@
 /* eslint-disable no-console */
+import { correlationContext } from './correlation.js';
+
 export const logger = {
   info(message, meta = {}) {
     this.log('info', message, meta);
@@ -14,10 +16,13 @@ export const logger = {
   },
   log(level, message, meta = {}) {
     const isProduction = process.env.NODE_ENV === 'production';
+    const context = correlationContext.getStore();
+    const requestId = context?.requestId || meta.requestId;
     const logData = {
       timestamp: new Date().toISOString(),
       level,
       message,
+      requestId,
       ...meta,
     };
 

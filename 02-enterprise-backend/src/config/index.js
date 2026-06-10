@@ -8,6 +8,7 @@ export const config = Object.freeze({
     port: parseInt(process.env.PORT, 10) || 3000,
     env: process.env.NODE_ENV || 'development',
     bodyLimit: process.env.BODY_LIMIT || '10kb',
+    trustProxy: process.env.TRUST_PROXY || '1',
   },
   security: {
     corsOrigin: process.env.CORS_ORIGIN || '*',
