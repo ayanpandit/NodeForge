@@ -1,0 +1,25 @@
+# Dependency package folders
+node_modules/
+jspm_packages/
+
+# System-level logs
+logs/*.log
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test coverage metadata
+coverage/
+.nyc_output/
+
+# Locally loaded environment configurations
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Operating System temporary caches
+.DS_Store
+Thumbs.db
